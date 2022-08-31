@@ -1,0 +1,7 @@
+00:54:05 **** Incremental Build of configuration Debug for project TutorialDMICToogleLed_v0 ****
+make -j12 all 
+arm-none-eabi-size   TutorialDMICToogleLed_v0.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5676	     20	   1636	   7332	   1ca4	TutorialDMICToogleLed_v0.elf
+Finished building: default.size.stdout
+ 
