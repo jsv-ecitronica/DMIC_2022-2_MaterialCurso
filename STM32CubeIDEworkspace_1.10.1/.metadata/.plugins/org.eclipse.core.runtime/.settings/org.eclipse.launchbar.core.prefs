@@ -1,9 +1,12 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TutorialDMICToogleLed_v0 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Adivinanzas1a5 Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TutorialDMICToogleLed_v0 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Adivinanzas1a5 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TimerTest_v00_ToogleLed Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TimerTest_v00_ToogleLed_Polling Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TimerTest_v01_ToogleLed_IRQ
 eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Adivinanzas1a5\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Adivinanzas1a5\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Test1\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Test1\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TimerTest_v00_ToogleLed\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TutorialDMICToogleLed_v0\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TutorialDMICToogleLed_v0\ Debug/activeLaunchTarget=null\:---

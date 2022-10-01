@@ -60,8 +60,8 @@ all: main-build
 main-build: TutorialDMICToogleLed_v0.elf secondary-outputs
 
 # Tool invocations
-TutorialDMICToogleLed_v0.elf TutorialDMICToogleLed_v0.map: $(OBJS) $(USER_OBJS) D:\jECI\2022-2-DMIC\STM32CubeIDEworkspace_1.10.1\TutorialDMICToogleLed_v0\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TutorialDMICToogleLed_v0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\jECI\2022-2-DMIC\STM32CubeIDEworkspace_1.10.1\TutorialDMICToogleLed_v0\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TutorialDMICToogleLed_v0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TutorialDMICToogleLed_v0.elf TutorialDMICToogleLed_v0.map: $(OBJS) $(USER_OBJS) D:\jECI\2022-2-DMIC\GitHub\DMIC_2022-2_MaterialCurso\STM32CubeIDEworkspace_1.10.1\TutorialDMICToogleLed_v0\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TutorialDMICToogleLed_v0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\jECI\2022-2-DMIC\GitHub\DMIC_2022-2_MaterialCurso\STM32CubeIDEworkspace_1.10.1\TutorialDMICToogleLed_v0\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TutorialDMICToogleLed_v0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
