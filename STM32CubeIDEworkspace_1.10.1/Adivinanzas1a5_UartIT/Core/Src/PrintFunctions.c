@@ -27,7 +27,7 @@ void printLine(char* text) {
 
 void printTextValue(char* text, uint32_t value) {
     //
-    uartBufLenght = snprintf(uartBuf, sizeof(uartBuf), "%s: %u", text, (unsigned int)value);
+    uartBufLenght = snprintf(uartBuf, sizeof(uartBuf), "\n\r%s: %u", text, (unsigned int)value);
     HAL_UART_Transmit(&huart2, (uint8_t*)uartBuf, uartBufLenght, 100);
 }
 

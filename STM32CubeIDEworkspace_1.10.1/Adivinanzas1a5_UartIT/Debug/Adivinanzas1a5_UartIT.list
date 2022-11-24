@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00003098  0800010c  0800010c  0001010c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000db8  080031a4  080031a4  000131a4  2**2
+  2 .rodata       00000dbc  080031a4  080031a4  000131a4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08003f5c  08003f5c  00020070  2**0
+  3 .ARM.extab    00000000  08003f60  08003f60  00020070  2**0
                   CONTENTS
-  4 .ARM          00000000  08003f5c  08003f5c  00020070  2**0
+  4 .ARM          00000000  08003f60  08003f60  00020070  2**0
                   CONTENTS
-  5 .preinit_array 00000000  08003f5c  08003f5c  00020070  2**0
+  5 .preinit_array 00000000  08003f60  08003f60  00020070  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08003f5c  08003f5c  00013f5c  2**2
+  6 .init_array   00000004  08003f60  08003f60  00013f60  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08003f60  08003f60  00013f60  2**2
+  7 .fini_array   00000004  08003f64  08003f64  00013f64  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000070  20000000  08003f64  00020000  2**2
+  8 .data         00000070  20000000  08003f68  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000108  20000070  08003fd4  00020070  2**2
+  9 .bss          00000108  20000070  08003fd8  00020070  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  20000178  08003fd4  00020178  2**0
+ 10 ._user_heap_stack 00000600  20000178  08003fd8  00020178  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020070  2**0
                   CONTENTS, READONLY
@@ -125,7 +125,7 @@ void printTextValue(char* text, uint32_t value) {
  8000196:	6078      	str	r0, [r7, #4]
  8000198:	6039      	str	r1, [r7, #0]
     //
-    uartBufLenght = snprintf(uartBuf, sizeof(uartBuf), "%s: %u", text, (unsigned int)value);
+    uartBufLenght = snprintf(uartBuf, sizeof(uartBuf), "\n\r%s: %u", text, (unsigned int)value);
  800019a:	683b      	ldr	r3, [r7, #0]
  800019c:	9300      	str	r3, [sp, #0]
  800019e:	687b      	ldr	r3, [r7, #4]
@@ -267,34 +267,34 @@ void ImprimirMensajeGanador(char* nombre) {
  80002a2:	3770      	adds	r7, #112	; 0x70
  80002a4:	46bd      	mov	sp, r7
  80002a6:	bd80      	pop	{r7, pc}
- 80002a8:	080031bc 	.word	0x080031bc
- 80002ac:	080031c0 	.word	0x080031c0
- 80002b0:	080031f0 	.word	0x080031f0
- 80002b4:	08003224 	.word	0x08003224
- 80002b8:	0800326c 	.word	0x0800326c
- 80002bc:	080032b8 	.word	0x080032b8
- 80002c0:	08003300 	.word	0x08003300
- 80002c4:	08003348 	.word	0x08003348
- 80002c8:	08003390 	.word	0x08003390
- 80002cc:	080033d8 	.word	0x080033d8
- 80002d0:	08003420 	.word	0x08003420
- 80002d4:	08003468 	.word	0x08003468
- 80002d8:	080034b4 	.word	0x080034b4
- 80002dc:	080034fc 	.word	0x080034fc
- 80002e0:	08003548 	.word	0x08003548
- 80002e4:	08003590 	.word	0x08003590
- 80002e8:	080035d0 	.word	0x080035d0
- 80002ec:	0800360c 	.word	0x0800360c
- 80002f0:	08003648 	.word	0x08003648
- 80002f4:	08003684 	.word	0x08003684
- 80002f8:	080036bc 	.word	0x080036bc
- 80002fc:	080036f4 	.word	0x080036f4
- 8000300:	08003728 	.word	0x08003728
- 8000304:	08003758 	.word	0x08003758
- 8000308:	08003788 	.word	0x08003788
- 800030c:	080037bc 	.word	0x080037bc
- 8000310:	080037f0 	.word	0x080037f0
- 8000314:	08003820 	.word	0x08003820
+ 80002a8:	080031c0 	.word	0x080031c0
+ 80002ac:	080031c4 	.word	0x080031c4
+ 80002b0:	080031f4 	.word	0x080031f4
+ 80002b4:	08003228 	.word	0x08003228
+ 80002b8:	08003270 	.word	0x08003270
+ 80002bc:	080032bc 	.word	0x080032bc
+ 80002c0:	08003304 	.word	0x08003304
+ 80002c4:	0800334c 	.word	0x0800334c
+ 80002c8:	08003394 	.word	0x08003394
+ 80002cc:	080033dc 	.word	0x080033dc
+ 80002d0:	08003424 	.word	0x08003424
+ 80002d4:	0800346c 	.word	0x0800346c
+ 80002d8:	080034b8 	.word	0x080034b8
+ 80002dc:	08003500 	.word	0x08003500
+ 80002e0:	0800354c 	.word	0x0800354c
+ 80002e4:	08003594 	.word	0x08003594
+ 80002e8:	080035d4 	.word	0x080035d4
+ 80002ec:	08003610 	.word	0x08003610
+ 80002f0:	0800364c 	.word	0x0800364c
+ 80002f4:	08003688 	.word	0x08003688
+ 80002f8:	080036c0 	.word	0x080036c0
+ 80002fc:	080036f8 	.word	0x080036f8
+ 8000300:	0800372c 	.word	0x0800372c
+ 8000304:	0800375c 	.word	0x0800375c
+ 8000308:	0800378c 	.word	0x0800378c
+ 800030c:	080037c0 	.word	0x080037c0
+ 8000310:	080037f4 	.word	0x080037f4
+ 8000314:	08003824 	.word	0x08003824
 
 08000318 <ImprimirMensajeNoGanador>:
 
@@ -353,20 +353,20 @@ void ImprimirMensajeNoGanador(void){
  8000376:	bf00      	nop
  8000378:	bd80      	pop	{r7, pc}
  800037a:	bf00      	nop
- 800037c:	080031bc 	.word	0x080031bc
- 8000380:	08003860 	.word	0x08003860
- 8000384:	08003874 	.word	0x08003874
- 8000388:	08003888 	.word	0x08003888
- 800038c:	0800389c 	.word	0x0800389c
- 8000390:	080038b0 	.word	0x080038b0
- 8000394:	080038c4 	.word	0x080038c4
- 8000398:	080038d8 	.word	0x080038d8
- 800039c:	080038ec 	.word	0x080038ec
- 80003a0:	08003900 	.word	0x08003900
- 80003a4:	08003914 	.word	0x08003914
- 80003a8:	0800392c 	.word	0x0800392c
- 80003ac:	08003944 	.word	0x08003944
- 80003b0:	0800395c 	.word	0x0800395c
+ 800037c:	080031c0 	.word	0x080031c0
+ 8000380:	08003864 	.word	0x08003864
+ 8000384:	08003878 	.word	0x08003878
+ 8000388:	0800388c 	.word	0x0800388c
+ 800038c:	080038a0 	.word	0x080038a0
+ 8000390:	080038b4 	.word	0x080038b4
+ 8000394:	080038c8 	.word	0x080038c8
+ 8000398:	080038dc 	.word	0x080038dc
+ 800039c:	080038f0 	.word	0x080038f0
+ 80003a0:	08003904 	.word	0x08003904
+ 80003a4:	08003918 	.word	0x08003918
+ 80003a8:	08003930 	.word	0x08003930
+ 80003ac:	08003948 	.word	0x08003948
+ 80003b0:	08003960 	.word	0x08003960
 
 080003b4 <ImprimirError>:
 
@@ -398,12 +398,12 @@ void ImprimirError (void) {
  80003e2:	bf00      	nop
  80003e4:	bd80      	pop	{r7, pc}
  80003e6:	bf00      	nop
- 80003e8:	080031bc 	.word	0x080031bc
- 80003ec:	08003988 	.word	0x08003988
- 80003f0:	080039b8 	.word	0x080039b8
- 80003f4:	080039e8 	.word	0x080039e8
- 80003f8:	08003a18 	.word	0x08003a18
- 80003fc:	08003a48 	.word	0x08003a48
+ 80003e8:	080031c0 	.word	0x080031c0
+ 80003ec:	0800398c 	.word	0x0800398c
+ 80003f0:	080039bc 	.word	0x080039bc
+ 80003f4:	080039ec 	.word	0x080039ec
+ 80003f8:	08003a1c 	.word	0x08003a1c
+ 80003fc:	08003a4c 	.word	0x08003a4c
 
 08000400 <main>:
 /**
@@ -766,28 +766,28 @@ int main(void)
  8000638:	2000015d 	.word	0x2000015d
  800063c:	2000015b 	.word	0x2000015b
  8000640:	2000015a 	.word	0x2000015a
- 8000644:	08003a64 	.word	0x08003a64
- 8000648:	08003a6c 	.word	0x08003a6c
- 800064c:	08003aac 	.word	0x08003aac
- 8000650:	08003aec 	.word	0x08003aec
- 8000654:	08003b2c 	.word	0x08003b2c
- 8000658:	08003b6c 	.word	0x08003b6c
- 800065c:	08003bac 	.word	0x08003bac
- 8000660:	08003bb0 	.word	0x08003bb0
- 8000664:	08003bec 	.word	0x08003bec
- 8000668:	08003c20 	.word	0x08003c20
- 800066c:	08003c64 	.word	0x08003c64
- 8000670:	08003c9c 	.word	0x08003c9c
- 8000674:	08003ce0 	.word	0x08003ce0
- 8000678:	08003d14 	.word	0x08003d14
- 800067c:	08003d48 	.word	0x08003d48
- 8000680:	08003d5c 	.word	0x08003d5c
- 8000684:	08003d80 	.word	0x08003d80
+ 8000644:	08003a68 	.word	0x08003a68
+ 8000648:	08003a70 	.word	0x08003a70
+ 800064c:	08003ab0 	.word	0x08003ab0
+ 8000650:	08003af0 	.word	0x08003af0
+ 8000654:	08003b30 	.word	0x08003b30
+ 8000658:	08003b70 	.word	0x08003b70
+ 800065c:	08003bb0 	.word	0x08003bb0
+ 8000660:	08003bb4 	.word	0x08003bb4
+ 8000664:	08003bf0 	.word	0x08003bf0
+ 8000668:	08003c24 	.word	0x08003c24
+ 800066c:	08003c68 	.word	0x08003c68
+ 8000670:	08003ca0 	.word	0x08003ca0
+ 8000674:	08003ce4 	.word	0x08003ce4
+ 8000678:	08003d18 	.word	0x08003d18
+ 800067c:	08003d4c 	.word	0x08003d4c
+ 8000680:	08003d60 	.word	0x08003d60
+ 8000684:	08003d84 	.word	0x08003d84
  8000688:	40010800 	.word	0x40010800
  800068c:	cccccccd 	.word	0xcccccccd
- 8000690:	08003db0 	.word	0x08003db0
- 8000694:	08003dc4 	.word	0x08003dc4
- 8000698:	08003dd8 	.word	0x08003dd8
+ 8000690:	08003db4 	.word	0x08003db4
+ 8000694:	08003dc8 	.word	0x08003dc8
+ 8000698:	08003ddc 	.word	0x08003ddc
 
 0800069c <SystemClock_Config>:
 /**
@@ -1358,9 +1358,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
  8000a00:	2000015b 	.word	0x2000015b
  8000a04:	2000015a 	.word	0x2000015a
  8000a08:	2000013c 	.word	0x2000013c
- 8000a0c:	08003dec 	.word	0x08003dec
+ 8000a0c:	08003df0 	.word	0x08003df0
  8000a10:	20000150 	.word	0x20000150
- 8000a14:	08003dfc 	.word	0x08003dfc
+ 8000a14:	08003e00 	.word	0x08003e00
  8000a18:	200000f4 	.word	0x200000f4
 
 08000a1c <Error_Handler>:
@@ -1933,7 +1933,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000c3c:	20000070 	.word	0x20000070
   ldr r2, =_sidata
- 8000c40:	08003f64 	.word	0x08003f64
+ 8000c40:	08003f68 	.word	0x08003f68
   ldr r2, =_sbss
  8000c44:	20000070 	.word	0x20000070
   ldr r4, =_ebss
@@ -4594,7 +4594,7 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
  8001b16:	bf00      	nop
  8001b18:	40022000 	.word	0x40022000
  8001b1c:	40021000 	.word	0x40021000
- 8001b20:	08003e10 	.word	0x08003e10
+ 8001b20:	08003e14 	.word	0x08003e14
  8001b24:	20000000 	.word	0x20000000
  8001b28:	20000004 	.word	0x20000004
 
@@ -4742,7 +4742,7 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  8001bd2:	bc90      	pop	{r4, r7}
  8001bd4:	4770      	bx	lr
  8001bd6:	bf00      	nop
- 8001bd8:	08003e00 	.word	0x08003e00
+ 8001bd8:	08003e04 	.word	0x08003e04
  8001bdc:	40021000 	.word	0x40021000
  8001be0:	007a1200 	.word	0x007a1200
  8001be4:	003d0900 	.word	0x003d0900
@@ -4790,7 +4790,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8001c18:	4618      	mov	r0, r3
  8001c1a:	bd80      	pop	{r7, pc}
  8001c1c:	40021000 	.word	0x40021000
- 8001c20:	08003e20 	.word	0x08003e20
+ 8001c20:	08003e24 	.word	0x08003e24
 
 08001c24 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -4816,7 +4816,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8001c40:	4618      	mov	r0, r3
  8001c42:	bd80      	pop	{r7, pc}
  8001c44:	40021000 	.word	0x40021000
- 8001c48:	08003e20 	.word	0x08003e20
+ 8001c48:	08003e24 	.word	0x08003e24
 
 08001c4c <RCC_Delay>:
   * @brief  This function provides delay (in milliseconds) based on CPU cycles method.
@@ -6810,10 +6810,10 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  800273e:	4798      	blx	r3
  8002740:	3601      	adds	r6, #1
  8002742:	e7f2      	b.n	800272a <__libc_init_array+0x1e>
- 8002744:	08003f5c 	.word	0x08003f5c
- 8002748:	08003f5c 	.word	0x08003f5c
- 800274c:	08003f5c 	.word	0x08003f5c
- 8002750:	08003f60 	.word	0x08003f60
+ 8002744:	08003f60 	.word	0x08003f60
+ 8002748:	08003f60 	.word	0x08003f60
+ 800274c:	08003f60 	.word	0x08003f60
+ 8002750:	08003f64 	.word	0x08003f64
 
 08002754 <memset>:
  8002754:	4603      	mov	r3, r0
@@ -6972,7 +6972,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80028ba:	d0a9      	beq.n	8002810 <_strtol_l.constprop.0+0x44>
  80028bc:	230a      	movs	r3, #10
  80028be:	e7af      	b.n	8002820 <_strtol_l.constprop.0+0x54>
- 80028c0:	08003e29 	.word	0x08003e29
+ 80028c0:	08003e2d 	.word	0x08003e2d
 
 080028c4 <strtol>:
  80028c4:	4613      	mov	r3, r2
@@ -7263,9 +7263,9 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8002b74:	f000 f87c 	bl	8002c70 <_printf_i>
  8002b78:	e7eb      	b.n	8002b52 <_svfiprintf_r+0x1c2>
  8002b7a:	bf00      	nop
- 8002b7c:	08003f29 	.word	0x08003f29
- 8002b80:	08003f2f 	.word	0x08003f2f
- 8002b84:	08003f33 	.word	0x08003f33
+ 8002b7c:	08003f2d 	.word	0x08003f2d
+ 8002b80:	08003f33 	.word	0x08003f33
+ 8002b84:	08003f37 	.word	0x08003f37
  8002b88:	00000000 	.word	0x00000000
  8002b8c:	080028d9 	.word	0x080028d9
 
@@ -7604,8 +7604,8 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8002eac:	2500      	movs	r5, #0
  8002eae:	f104 0619 	add.w	r6, r4, #25
  8002eb2:	e7f5      	b.n	8002ea0 <_printf_i+0x230>
- 8002eb4:	08003f3a 	.word	0x08003f3a
- 8002eb8:	08003f4b 	.word	0x08003f4b
+ 8002eb4:	08003f3e 	.word	0x08003f3e
+ 8002eb8:	08003f4f 	.word	0x08003f4f
 
 08002ebc <memchr>:
  8002ebc:	4603      	mov	r3, r0
