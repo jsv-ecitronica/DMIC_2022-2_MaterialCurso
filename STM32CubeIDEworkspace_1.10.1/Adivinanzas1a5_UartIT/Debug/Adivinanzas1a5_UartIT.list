@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00017278  00000000  00000000  00028c98  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00007f7b  00000000  00000000  0003ff10  2**0
+ 17 .debug_line   00007f77  00000000  00000000  0003ff10  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082800  00000000  00000000  00047e8b  2**0
+ 18 .debug_str    00082800  00000000  00000000  00047e87  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000ca68b  2**0
+ 19 .comment      00000050  00000000  00000000  000ca687  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00001f20  00000000  00000000  000ca6dc  2**2
+ 20 .debug_frame  00001f20  00000000  00000000  000ca6d8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1105,7 +1105,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
  800086c:	2300      	movs	r3, #0
  800086e:	73bb      	strb	r3, [r7, #14]
         //
-        if (bufRx[0] == 0x1B) {
+        if (bufRx[0] == 0x1B) { //Esc
  8000870:	4b61      	ldr	r3, [pc, #388]	; (80009f8 <HAL_UART_RxCpltCallback+0x1a4>)
  8000872:	781b      	ldrb	r3, [r3, #0]
  8000874:	2b1b      	cmp	r3, #27
@@ -1126,8 +1126,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
  8000890:	f000 808d 	beq.w	80009ae <HAL_UART_RxCpltCallback+0x15a>
  8000894:	2b01      	cmp	r3, #1
  8000896:	f040 808f 	bne.w	80009b8 <HAL_UART_RxCpltCallback+0x164>
-            //No hace nada, descarta caracter recibido
-            break;
+                //No hace nada, descarta caracter recibido
+                break;
 
             case IRQ_RX_NAME:   //recibiendo nombre
                 //Almacenar caracter en buffer
@@ -1308,7 +1308,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
                 }
                 break;
  80009ac:	e003      	b.n	80009b6 <HAL_UART_RxCpltCallback+0x162>
-            break;
+                break;
  80009ae:	bf00      	nop
  80009b0:	e002      	b.n	80009b8 <HAL_UART_RxCpltCallback+0x164>
                 break;

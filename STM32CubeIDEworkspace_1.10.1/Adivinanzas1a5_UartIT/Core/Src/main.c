@@ -384,13 +384,13 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
         uint8_t echoFlag = 0;
         uint8_t backspaceFlag = 0;
         //
-        if (bufRx[0] == 0x1B) {
+        if (bufRx[0] == 0x1B) { //Esc
             flagEsc = 1;
         } else switch (statesIrq) {
 
-        case IRQ_IDLE:
-            //No hace nada, descarta caracter recibido
-            break;
+            case IRQ_IDLE:
+                //No hace nada, descarta caracter recibido
+                break;
 
             case IRQ_RX_NAME:   //recibiendo nombre
                 //Almacenar caracter en buffer
