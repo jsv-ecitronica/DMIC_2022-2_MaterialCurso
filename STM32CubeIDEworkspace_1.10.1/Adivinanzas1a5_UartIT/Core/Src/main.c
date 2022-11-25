@@ -14,6 +14,26 @@
   * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
+  * Juego de las adivinanzas
+  * Javier Soto - 2022/11/24
+  *
+  * Ejemplo de como usar la interrupción usando UART, asi como de lectura del
+  * SysTick timer para generación de número base para el juego de las adivinanzas.
+  * Desarrollado para una tarjeta NUCLE0-F103RB.
+  *
+  * Caracteristicas adicionales
+  * - El sistema genera eco local de los caracteres recibidos
+  * - Es necesario que el usuario deshabilite la opcion de eco local en su terminal
+  * - Asegurese que su terminal use 'Control-H' (0x08) como 'Backspace'
+  * - Se puede usar el Backspace para borrar datos ingresados.
+  * - El nombre se tomara automaticamente cuando el buffer de nombre este lleno
+  * - El numero tiene un limite maximo de caracteres, no se recibiran mas hasta que se ingrese Enter
+  * - Use la tecla 'Esc' para reiniciar la aplicacion
+  *
+  * Referencias adicionales:
+  * - https://www.asciiart.eu/
+  * - https://codegolf.stackexchange.com/questions/16587/print-a-smiley-face
+  ******************************************************************************
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
@@ -156,15 +176,15 @@ int main(void)
 
         case MAIN_INIT_AND_REQUEST_NAME:
             printLine("\x1b[2J"); //Clear the screen
-            printLine("***************************************************************");
-            printLine("* Universidad Escuela Colombiana de Ingenieria Julio Garavito *");
-            printLine("* DMIC - Javier Soto - 2022                                   *");
-            printLine("* Juego 'JUGUEMOS A LAS ADIVINANZAS - UART IT'                *");
-            printLine("* Desarrollado para una tarjeta NUCLE0-F103RB                 *");
-            printLine("***************************************************************");
+            printLine("****************************************************************");
+            printLine("* Universidad Escuela Colombiana de Ingenieria Julio Garavito  *");
+            printLine("* DMIC - Javier Soto - 2022                                    *");
+            printLine("* Juego 'JUGUEMOS A LAS ADIVINANZAS' - UART con Interrupciones *");
+            printLine("* Desarrollado para una tarjeta NUCLE0-F103RB                  *");
+            printLine("****************************************************************");
             printLine("");
             printLine("- El sistema genera eco local de los caracteres recibidos");
-            printLine("  Deshabilite la opcion de eco local en su terminal");
+            printLine("- Deshabilite la opcion de eco local en su terminal");
             printLine("- Asegurese que su terminal use 'Control-H' (0x08) como 'Backspace'");
             printLine("- Utilice el Backspace para borrar datos ingresados.");
             printLine("- El nombre se tomara automaticamente cuando el buffer este lleno");
